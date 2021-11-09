@@ -1,8 +1,12 @@
 import React, { ChangeEvent, useState } from 'react';
 import styles from './ImageInput.module.css';
 
-function ImageInput() {
-  const [imageUrl, setImageUrl] = useState<string | null>(null);
+type ImageInputProps = {
+  onUpload: (url: string) => void;
+};
+
+function ImageInput({ onUpload }: ImageInputProps) {
+  const [imageURL, setImageURL] = useState<string | null>(null);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     if (!event.target.files || event.target.files.length === 0) {
@@ -10,7 +14,8 @@ function ImageInput() {
     }
     const file = event.target.files[0];
     const newImageURL = URL.createObjectURL(file);
-    setImageUrl(newImageURL);
+    setImageURL(newImageURL);
+    onUpload(newImageURL);
   };
 
   return (
@@ -21,8 +26,8 @@ function ImageInput() {
         accept="image/*"
         onChange={handleChange}
       />
-      Upload your Image
-      {imageUrl && <img src={imageUrl} />}
+      Upload your image
+      {imageURL && <img src={imageURL} />}
     </label>
   );
 }
