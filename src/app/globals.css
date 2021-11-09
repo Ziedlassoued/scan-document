@@ -10,7 +10,11 @@
   /* COLORS */
   --color-primary: orange;
   --color-secondary: black;
+  --color-tertiary: white;
   --color-enable: grey;
+  --color-text-primary: black;
+  --color-text-title: orange;
+  --input-field: rgb(196 196 196 / 20%);
 
   /* FONT */
   --font-primary: 'Roboto', sans-serif;

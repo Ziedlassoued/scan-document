@@ -1,0 +1,16 @@
+.label {
+  display: grid;
+  place-content: center;
+  position: absolute;
+  background-color: var(--color-secondary);
+  text-decoration: underline;
+  color: var(--color-primary);
+  font-size: 18px;
+  border-radius: 8px;
+  width: 16rem;
+  height: 2.5rem;
+}
+
+.upload {
+  display: none;
+}
