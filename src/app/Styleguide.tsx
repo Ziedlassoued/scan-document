@@ -43,7 +43,9 @@ function Styleguide() {
             borderRadius: '50%',
             background: 'var(--color-primary)',
           }}
-        ></button>
+        >
+          Active
+        </button>
         <button
           style={{
             width: 100,
@@ -51,7 +53,32 @@ function Styleguide() {
             borderRadius: '50%',
             background: 'var(--color-enable)',
           }}
-        ></button>
+        >
+          Inactive
+        </button>
+      </div>
+
+      <div style={{ display: 'flex', gap: 8 }}>
+        <button
+          style={{
+            width: 45,
+            height: 20,
+            borderRadius: '20%',
+            background: 'var(--color-primary)',
+          }}
+        >
+          weiter
+        </button>
+        <button
+          style={{
+            width: 50,
+            height: 20,
+            borderRadius: '15%',
+            background: 'var(--color-enable)',
+          }}
+        >
+          zurück
+        </button>
       </div>
     </div>
   );
