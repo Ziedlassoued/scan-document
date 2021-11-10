@@ -2,4 +2,9 @@
   display: grid;
   row-gap: 0.5rem;
   justify-items: center;
+  background-color: grey;
+  border-radius: 20px;
+  width: 200px;
+  height: 50px;
+  color: var(--color-primary);
 }

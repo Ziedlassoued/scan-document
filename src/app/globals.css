@@ -28,26 +28,11 @@ h4,
 h5 {
   font-family: var(--font-primary);
   font-weight: 400;
+  color: var(--color-primary);
 }
 
 body {
   margin: 0;
   font-family: var(--font-primary);
-  background-color: var(--color-enable);
-}
-
-a {
-  color: var(--color-primary);
-}
-
-a:hover,
-a:active {
-  color: var(--color-primary);
-}
-
-button {
-  color: var(---color-primary);
-  background-color: var(--color-primary);
-  border-radius: 20px;
-  padding: 0.5em 1em;
+  background-color: gray;
 }
