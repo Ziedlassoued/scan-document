@@ -56,6 +56,17 @@ function Styleguide() {
         >
           Inactive
         </button>
+        <button
+          style={{
+            width: 100,
+            height: 100,
+            background: 'var(--color-tertiary)',
+            borderRadius: '50%',
+            color: 'var(--color-secondary)',
+          }}
+        >
+          Button Hover
+        </button>
       </div>
 
       <div style={{ display: 'flex', gap: 8 }}>
@@ -79,6 +90,20 @@ function Styleguide() {
         >
           zurück
         </button>
+      </div>
+      <div
+        style={{
+          background: 'var(--input-field)',
+          borderRadius: '15px',
+          color: 'var(--color-text-primary)',
+          textAlign: 'center',
+          padding: '0.5rem',
+          width: '200px',
+          border: 'solid var(--color-text-title) 2px',
+          margin: '2rem',
+        }}
+      >
+        input text field
       </div>
     </div>
   );

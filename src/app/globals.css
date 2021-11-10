@@ -10,14 +10,44 @@
   /* COLORS */
   --color-primary: orange;
   --color-secondary: black;
+  --color-tertiary: white;
   --color-enable: grey;
+  --color-text-primary: black;
+  --color-text-title: orange;
+  --input-field: rgb(196 196 196 / 20%);
 
   /* FONT */
   --font-primary: 'Roboto', sans-serif;
   --font-primary-size: 22px;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--font-primary);
+  font-weight: 400;
+}
+
 body {
   margin: 0;
   font-family: var(--font-primary);
+  background-color: var(--color-secondary);
+}
+
+a {
+  color: var(--color-primary);
+}
+
+a:hover,
+a:active {
+  color: var(--color-primary);
+}
+
+button {
+  color: var(---color-primary);
+  background-color: var(--color-primary);
+  border-radius: 20px;
+  padding: 0.5em 1em;
 }
