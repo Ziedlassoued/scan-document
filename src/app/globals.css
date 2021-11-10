@@ -34,5 +34,5 @@ h5 {
 body {
   margin: 0;
   font-family: var(--font-primary);
-  background-color: gray;
+  background: linear-gradient(90deg, #dfdfdf 50%, #bb748d 50%);
 }

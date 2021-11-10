@@ -12,7 +12,11 @@ function Scan(): JSX.Element {
 
   return (
     <div className={styles.container}>
-      <h1>Scan Document</h1>
+      <div className={styles.mainBox}>
+        <div className={styles.neonText}>
+          <h1 className={styles.textColo}>Scan Document</h1>
+        </div>
+      </div>
       {recognizedText ? (
         <p>{recognizedText}</p>
       ) : (
