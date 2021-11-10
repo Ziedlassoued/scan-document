@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ImageInput from '../../components/ImageInput/ImageInput';
 import styles from './Scan.module.css';
-import Tesseract from 'tesseract.js';
+import { recognizeText } from '../../utils/ocr';
 
 function Scan() {
   const [imageURL, setImageURL] = useState<string | null>(null);
@@ -19,12 +19,9 @@ function Scan() {
         disabled={imageURL === null}
         onClick={() => {
           if (imageURL) {
-            Tesseract.recognize(imageURL, 'eng', {
-              logger: (message) => console.log(message.progress),
-            }).then((result) => {
-              const text = result.data.text;
-              setRecognizedText(text);
-            });
+            recognizeText(imageURL, ({ progress, status }) => {
+              console.log(progress, status);
+            }).then(setRecognizedText);
           }
         }}
       >
