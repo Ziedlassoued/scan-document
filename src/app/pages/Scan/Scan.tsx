@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import ImageInput from '../../components/ImageInput/ImageInput';
 import styles from './Scan.module.css';
-import { recognizeText } from '../../utils/ocr';
+import { RecognizeProgress, recognizeText } from '../../utils/ocr';
+import Progress from '../../components/Progress/Progress';
 
-function Scan() {
+function Scan(): JSX.Element {
   const [imageURL, setImageURL] = useState<string | null>(null);
   const [recognizedText, setRecognizedText] = useState<string | null>(null);
+  const [recognizeProgress, setRecognizeProgress] =
+    useState<RecognizeProgress | null>(null);
 
   return (
     <div className={styles.container}>
@@ -14,19 +17,26 @@ function Scan() {
       ) : (
         <ImageInput onUpload={setImageURL} />
       )}
-      <button
-        className={styles.scan}
-        disabled={imageURL === null}
-        onClick={() => {
-          if (imageURL) {
-            recognizeText(imageURL, ({ progress, status }) => {
-              console.log(progress, status);
-            }).then(setRecognizedText);
-          }
-        }}
-      >
-        Scan your image
-      </button>
+      {recognizeProgress ? (
+        <Progress
+          progress={recognizeProgress.progress * 100}
+          status={recognizeProgress.status}
+        />
+      ) : (
+        <button
+          className={styles.scan}
+          disabled={imageURL === null}
+          onClick={() => {
+            if (imageURL) {
+              recognizeText(imageURL, setRecognizeProgress).then(
+                setRecognizedText
+              );
+            }
+          }}
+        >
+          Scan
+        </button>
+      )}
       <a href="#">Back</a>
     </div>
   );
