@@ -33,7 +33,7 @@ h5 {
 body {
   margin: 0;
   font-family: var(--font-primary);
-  background-color: var(--color-secondary);
+  background-color: var(--color-enable);
 }
 
 a {
