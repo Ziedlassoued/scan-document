@@ -13,11 +13,11 @@
 .skip {
   background-color: var(--color-primary);
   color: var(--color-secondary);
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-}
-
-.scan {
-  width: 30%;
+  border-radius: 8px;
+  width: 12rem;
+  height: 2.5rem;
+  align-items: center;
+  text-decoration: none;
+  justify-items: center;
+  align-content: center;
 }

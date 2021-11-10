@@ -1,4 +1,5 @@
 import React, { ChangeEvent, useState } from 'react';
+import Icon from './Icon';
 import styles from './ImageInput.module.css';
 
 type ImageInputProps = {
@@ -26,8 +27,11 @@ function ImageInput({ onUpload }: ImageInputProps) {
         accept="image/*"
         onChange={handleChange}
       />
-      Upload your image
-      {imageURL && <img src={imageURL} />}
+      {imageURL ? (
+        <img src={imageURL} alt="" className={styles.preview} />
+      ) : (
+        <Icon />
+      )}
     </label>
   );
 }

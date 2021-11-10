@@ -12,7 +12,7 @@ function Scan() {
         Upload your image
       </button>
       <a className={styles.skip} href="#">
-        X
+        Back
       </a>
     </div>
   );
