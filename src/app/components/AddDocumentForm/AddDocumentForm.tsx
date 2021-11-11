@@ -7,21 +7,25 @@ type AddDocumentFormProps = {
 
 function AddDocumentForm({ text }: AddDocumentFormProps): JSX.Element {
   const [title, setTitle] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (event: FormEvent) => {
+  const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
 
     const document = {
       title,
       text,
     };
-    fetch('https://json-server.machens.dev/docs', {
+
+    await fetch('https://json-server.machens.dev/docs', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(document),
     });
+    setIsLoading(true);
+    setTitle('');
   };
 
   return (
@@ -35,7 +39,11 @@ function AddDocumentForm({ text }: AddDocumentFormProps): JSX.Element {
           onChange={(event) => setTitle(event.target.value)}
         />
       </div>
-      <input className={styles.btn} type="submit" disabled={!title} />
+      <input
+        className={styles.btn}
+        type="submit"
+        disabled={!title || isLoading}
+      />
     </form>
   );
 }
