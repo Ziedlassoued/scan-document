@@ -15,7 +15,7 @@ function usePostDocument() {
     setIsLoading(false);
   };
 
-  return { isLoading, postDocument };
+  return { postDocument, isLoading };
 }
 
 export default usePostDocument;

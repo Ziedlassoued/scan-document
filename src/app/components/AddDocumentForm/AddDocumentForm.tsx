@@ -35,6 +35,7 @@ function AddDocumentForm({ text }: AddDocumentFormProps): JSX.Element {
       <input
         className={styles.btn}
         type="submit"
+        value="save"
         disabled={!title || isLoading}
       />
     </form>

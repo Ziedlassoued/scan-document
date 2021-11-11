@@ -13,7 +13,7 @@ function Scan(): JSX.Element {
     <div className={styles.container}>
       <div className={styles.mainBox}>
         <div className={styles.neonText}>
-          <h1 className={styles.textColo}>Scan Document</h1>
+          <h1 className={styles.textColor}>Scan Document</h1>
         </div>
       </div>
       {text ? <p>{text}</p> : <ImageInput onUpload={setImageURL} />}
