@@ -1,35 +1,41 @@
 import React, { useState } from 'react';
 import ImageInput from '../../components/ImageInput/ImageInput';
 import styles from './Scan.module.css';
-import Tesseract from 'tesseract.js';
+import Progress from '../../components/Progress/Progress';
+import AddDocumentForm from '../../components/AddDocumentForm/AddDocumentForm';
+import useRecognizeText from '../../utils/useRecognizeText';
 
-function Scan() {
+function Scan(): JSX.Element {
   const [imageURL, setImageURL] = useState<string | null>(null);
-  const [recognizedText, setRecognizedText] = useState<string | null>(null);
+  const { text, progress, recognize } = useRecognizeText();
 
   return (
     <div className={styles.container}>
-      {recognizedText ? (
-        <p>{recognizedText}</p>
-      ) : (
-        <ImageInput onUpload={setImageURL} />
+      <div className={styles.mainBox}>
+        <div className={styles.neonText}>
+          <h1 className={styles.textColo}>Scan Document</h1>
+        </div>
+      </div>
+      {text ? <p>{text}</p> : <ImageInput onUpload={setImageURL} />}
+
+      {text && <AddDocumentForm text={text} />}
+
+      {!text && progress && (
+        <Progress progress={progress.progress * 100} status={progress.status} />
       )}
-      <button
-        className={styles.scan}
-        disabled={imageURL === null}
-        onClick={() => {
-          if (imageURL) {
-            Tesseract.recognize(imageURL, 'eng', {
-              logger: (message) => console.log(message.progress),
-            }).then((result) => {
-              const text = result.data.text;
-              setRecognizedText(text);
-            });
-          }
-        }}
-      >
-        Scan your image
-      </button>
+      {!progress && (
+        <button
+          className={styles.scan}
+          disabled={imageURL === null}
+          onClick={() => {
+            if (imageURL) {
+              recognize(imageURL);
+            }
+          }}
+        >
+          Scan
+        </button>
+      )}
       <a href="#">Back</a>
     </div>
   );
