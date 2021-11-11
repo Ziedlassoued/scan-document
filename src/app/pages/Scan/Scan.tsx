@@ -3,6 +3,7 @@ import ImageInput from '../../components/ImageInput/ImageInput';
 import styles from './Scan.module.css';
 import { RecognizeProgress, recognizeText } from '../../utils/ocr';
 import Progress from '../../components/Progress/Progress';
+import AddDocumentForm from '../../components/AddDocumentForm/AddDocumentForm';
 
 function Scan(): JSX.Element {
   const [imageURL, setImageURL] = useState<string | null>(null);
@@ -22,12 +23,14 @@ function Scan(): JSX.Element {
       ) : (
         <ImageInput onUpload={setImageURL} />
       )}
-      {recognizeProgress ? (
+      {recognizedText && <AddDocumentForm text={recognizedText} />}
+      {!recognizedText && recognizeProgress && (
         <Progress
           progress={recognizeProgress.progress * 100}
           status={recognizeProgress.status}
         />
-      ) : (
+      )}
+      {!recognizeProgress && (
         <button
           className={styles.scan}
           disabled={imageURL === null}
