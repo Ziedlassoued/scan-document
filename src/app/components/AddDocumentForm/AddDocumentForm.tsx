@@ -35,7 +35,7 @@ function AddDocumentForm({ text }: AddDocumentFormProps): JSX.Element {
           onChange={(event) => setTitle(event.target.value)}
         />
       </div>
-      <input className={styles.btn} type="submit" />
+      <input className={styles.btn} type="submit" disabled={!title} />
     </form>
   );
 }
