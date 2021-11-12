@@ -14,6 +14,14 @@ function Preview(): JSX.Element {
   return (
     <div className={styles.container}>
       <h2>my document</h2>
+      <div className={styles.box}>
+        <div className={styles.searchBox}>
+          <input type="text" placeholder="Enter document name" />
+          <label className={styles.icon}>
+            <i className="fas fa-search"></i>
+          </label>
+        </div>
+      </div>
       <ul>
         <li>
           {documents &&

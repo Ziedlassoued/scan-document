@@ -96,7 +96,7 @@ a {
   position: relative;
   font-size: 1.2rem;
   font-weight: bolder;
-  background-color: var(--color-secondary);
+  background-color: #182b3c;
   border-radius: 30px;
   color: #dfdfdf;
   z-index: 1;

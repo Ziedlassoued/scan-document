@@ -6,7 +6,7 @@
   font-size: 20px;
   padding: 8px 0;
   margin: 8px 0;
-  border-bottom: 2px solid var(--color-secondary);
+  border-bottom: 2px solid #182b3c;
 }
 
 .textbox i {
@@ -19,7 +19,7 @@
   border: none;
   outline: none;
   background: none;
-  color: black;
+  color: #182b3c;
   font-size: 18px;
   width: 80%;
   float: left;
@@ -32,11 +32,12 @@
   position: relative;
   font-size: 1.2rem;
   font-weight: bolder;
-  background-color: var(--color-secondary);
+  background-color: #182b3c;
   border-radius: 30px;
   color: #dfdfdf;
   z-index: 1;
   text-decoration: none;
+  width: 140px;
 }
 
 .btn::before {
