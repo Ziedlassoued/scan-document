@@ -26,9 +26,9 @@ function Preview(): JSX.Element {
         <li>
           {documents &&
             documents.map((document) => (
-              <p>
+              <section>
                 <DocPreview title={document.title} />
-              </p>
+              </section>
             ))}
         </li>
       </ul>

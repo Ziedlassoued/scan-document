@@ -73,7 +73,7 @@
   transform: rotate(45deg) scale(1.5);
 }
 
-.container ul li p {
+.container ul li section {
   position: relative;
   z-index: 10;
   padding: 5px 10px;
