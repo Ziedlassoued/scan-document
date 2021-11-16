@@ -6,4 +6,4 @@ export default {
   title: 'Components/SearchBar',
 };
 
-export const Default = () => <SearchBar placeholder="Enter document name" />;
+export const Default = () => <SearchBar onSearch={console.log} />;

@@ -6,8 +6,14 @@ export default {
   title: 'Components/DocPreview',
 };
 
-export const Invoice = () => <DocPreview title="Document 1" />;
+export const Invoice = () => (
+  <DocPreview title="Invoice 1" text={'das ist ein Text'} />
+);
 
-export const Voucher = () => <DocPreview title="Document 2" />;
+export const Voucher = () => (
+  <DocPreview title="Voucher 2" text={'das ist ein Text'} />
+);
 
-export const Document = () => <DocPreview title="Document 3" />;
+export const Document = () => (
+  <DocPreview title="Document 3" text={'das ist ein Text'} />
+);
