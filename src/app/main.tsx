@@ -3,14 +3,14 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App';
 import React from 'react';
 import './globals.css';
-import PreviewList from './pages/Preview/PreviewList';
+import { Preview } from '@mui/icons-material';
 
 const rootElement = document.getElementById('root');
 render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />} />
-      <Route path="preview" element={<PreviewList />} />
+      <Route path="preview" element={<Preview />} />
     </Routes>
   </BrowserRouter>,
   rootElement
