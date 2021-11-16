@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import DocPreview from '../DocPreview/DocPreview';
-import styles from '<PrevieweList.module.css';
+import styles from './PreviewList.module.css';
 import useGetDocuments from '../../utils/useGetDocuments';
 import SearchBar from '../SearchBar/SearchBar';
 
