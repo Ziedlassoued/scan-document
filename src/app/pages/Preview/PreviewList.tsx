@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import DocPreview from '../DocPreview/DocPreview';
+import DocPreview from '../../components/DocPreview/DocPreview';
 import styles from './PreviewList.module.css';
 import useGetDocuments from '../../utils/useGetDocuments';
-import SearchBar from '../SearchBar/SearchBar';
+import SearchBar from '../../components/SearchBar/SearchBar';
 
-function PreviewDocument(): JSX.Element {
+function PreviewList(): JSX.Element {
   const documents = useGetDocuments();
   const [search, setSearch] = useState('');
 
@@ -33,4 +33,4 @@ function PreviewDocument(): JSX.Element {
     </div>
   );
 }
-export default PreviewDocument;
+export default PreviewList;
