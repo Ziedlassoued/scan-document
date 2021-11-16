@@ -4,6 +4,7 @@ import styles from './Scan.module.css';
 import Progress from '../../components/Progress/Progress';
 import AddDocumentForm from '../../components/AddDocumentForm/AddDocumentForm';
 import useRecognizeText from '../../utils/useRecognizeText';
+import { Link } from 'react-router-dom';
 
 function Scan(): JSX.Element {
   const [imageURL, setImageURL] = useState<string | null>(null);
@@ -37,6 +38,7 @@ function Scan(): JSX.Element {
         </button>
       )}
       <a href="#">Back</a>
+      <Link to="/Preview">Skip</Link>
     </div>
   );
 }
